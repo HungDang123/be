@@ -1,0 +1,65 @@
+spring:
+  datasource:
+    # dữ liệu demo thì dùng cái này nha, t insert kha khá dữ liệu
+#    url: jdbc:postgresql://autorack.proxy.rlwy.net:22714/railway
+#    username: postgres
+#    password: TmLNwENGlfiUstybmRzfRUQimmPJiyJq
+    url: jdbc:postgresql://localhost:5432/datn
+    username: postgres
+    password: 123
+    #    url: jdbc:postgresql://localhost:5432/Planfortrips
+    #    username: admin
+    #    password: admin
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      connection-timeout: 20000
+      max-lifetime: 2000000
+    servlet:
+      multipart:
+        max-file-size: 5MB
+        max-request-size: 5MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  security:
+    user:
+      name: admin
+      password: admin
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: planfortrips.296@gmail.com
+    password: vnaqgabmviirtnos
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+api:
+  prefix: api/v1
+
+cloudinary:
+  cloud_name: dzbtsco86
+  api_key: 458554894698284
+  api_secret: 5JqucoX6jWiaB4xikpQb5wpjbJo
+
+google:
+  clientId: 424498509357-mdqgg2eferdtjkeh6s89ooce1rmcjdmi.apps.googleusercontent.com
+  clientSecret: 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
+plan_for_trip:
+  env: development
+#  env: production
